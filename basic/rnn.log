@@ -1,0 +1,238 @@
+train_data_path          = ../train_data/normal.npy
+num_of_input_nodes       = 1
+num_of_hidden_nodes      = 2
+num_of_output_nodes      = 1
+length_of_sequences      = 50
+num_of_training_epochs   = 1000
+num_of_prediction_epochs = 100
+size_of_mini_batch       = 100
+learning_rate            = 0.100000
+forget_bias              = 1.000000
+train_data: [[  0.00000000e+00   1.25333234e-01]
+ [  1.25333234e-01   2.48689887e-01]
+ [  2.48689887e-01   3.68124553e-01]
+ ..., 
+ [ -3.68124553e-01  -2.48689887e-01]
+ [ -2.48689887e-01  -1.25333234e-01]
+ [ -1.25333234e-01   3.92877345e-15]]
+train#10, train loss: 5.232192e-01
+train#20, train loss: 5.010345e-01
+train#30, train loss: 5.202867e-01
+train#40, train loss: 5.360007e-01
+train#50, train loss: 4.481648e-01
+train#60, train loss: 4.601893e-01
+train#70, train loss: 4.767358e-01
+train#80, train loss: 3.683131e-01
+train#90, train loss: 2.521414e-01
+train#100, train loss: 1.776398e-01
+train#110, train loss: 9.498769e-02
+train#120, train loss: 6.457195e-02
+train#130, train loss: 5.424558e-02
+train#140, train loss: 4.712017e-02
+train#150, train loss: 4.507850e-02
+train#160, train loss: 3.702382e-02
+train#170, train loss: 3.419126e-02
+train#180, train loss: 3.060424e-02
+train#190, train loss: 2.997156e-02
+train#200, train loss: 2.921304e-02
+train#210, train loss: 2.144124e-02
+train#220, train loss: 2.425282e-02
+train#230, train loss: 2.046308e-02
+train#240, train loss: 2.288784e-02
+train#250, train loss: 2.264111e-02
+train#260, train loss: 1.577813e-02
+train#270, train loss: 1.713453e-02
+train#280, train loss: 1.530980e-02
+train#290, train loss: 1.660717e-02
+train#300, train loss: 1.324682e-02
+train#310, train loss: 1.292091e-02
+train#320, train loss: 1.278176e-02
+train#330, train loss: 1.241986e-02
+train#340, train loss: 1.178413e-02
+train#350, train loss: 1.154404e-02
+train#360, train loss: 1.007975e-02
+train#370, train loss: 8.637670e-03
+train#380, train loss: 8.993944e-03
+train#390, train loss: 8.487168e-03
+train#400, train loss: 8.826821e-03
+train#410, train loss: 7.320656e-03
+train#420, train loss: 6.381793e-03
+train#430, train loss: 7.028408e-03
+train#440, train loss: 7.145051e-03
+train#450, train loss: 7.857284e-03
+train#460, train loss: 6.681419e-03
+train#470, train loss: 6.893535e-03
+train#480, train loss: 5.993830e-03
+train#490, train loss: 5.199163e-03
+train#500, train loss: 6.163324e-03
+train#510, train loss: 5.385712e-03
+train#520, train loss: 5.606339e-03
+train#530, train loss: 5.443939e-03
+train#540, train loss: 5.064153e-03
+train#550, train loss: 3.807908e-03
+train#560, train loss: 4.886667e-03
+train#570, train loss: 5.063960e-03
+train#580, train loss: 4.280763e-03
+train#590, train loss: 3.850285e-03
+train#600, train loss: 3.813511e-03
+train#610, train loss: 3.842188e-03
+train#620, train loss: 3.438805e-03
+train#630, train loss: 3.981114e-03
+train#640, train loss: 3.400723e-03
+train#650, train loss: 3.175893e-03
+train#660, train loss: 3.077822e-03
+train#670, train loss: 3.125801e-03
+train#680, train loss: 2.886330e-03
+train#690, train loss: 2.429674e-03
+train#700, train loss: 2.828352e-03
+train#710, train loss: 2.820818e-03
+train#720, train loss: 2.848949e-03
+train#730, train loss: 2.594470e-03
+train#740, train loss: 2.318024e-03
+train#750, train loss: 2.217262e-03
+train#760, train loss: 2.268199e-03
+train#770, train loss: 2.655973e-03
+train#780, train loss: 2.361165e-03
+train#790, train loss: 2.186151e-03
+train#800, train loss: 2.385404e-03
+train#810, train loss: 1.768075e-03
+train#820, train loss: 2.212171e-03
+train#830, train loss: 2.024553e-03
+train#840, train loss: 1.623905e-03
+train#850, train loss: 1.738755e-03
+train#860, train loss: 1.954965e-03
+train#870, train loss: 1.785732e-03
+train#880, train loss: 1.678623e-03
+train#890, train loss: 1.682880e-03
+train#900, train loss: 1.701307e-03
+train#910, train loss: 1.470105e-03
+train#920, train loss: 1.752510e-03
+train#930, train loss: 1.387122e-03
+train#940, train loss: 1.508713e-03
+train#950, train loss: 1.656188e-03
+train#960, train loss: 1.509062e-03
+train#970, train loss: 1.446010e-03
+train#980, train loss: 1.581926e-03
+train#990, train loss: 1.585674e-03
+train#1000, train loss: 1.555989e-03
+prediction#1, output: -0.002304
+prediction#2, output: 0.126458
+prediction#3, output: 0.255132
+prediction#4, output: 0.378679
+prediction#5, output: 0.491222
+prediction#6, output: 0.587422
+prediction#7, output: 0.663927
+prediction#8, output: 0.720270
+prediction#9, output: 0.758470
+prediction#10, output: 0.781764
+prediction#11, output: 0.793430
+prediction#12, output: 0.796188
+prediction#13, output: 0.792059
+prediction#14, output: 0.782449
+prediction#15, output: 0.768277
+prediction#16, output: 0.750091
+prediction#17, output: 0.728155
+prediction#18, output: 0.702503
+prediction#19, output: 0.672970
+prediction#20, output: 0.639208
+prediction#21, output: 0.600685
+prediction#22, output: 0.556687
+prediction#23, output: 0.506307
+prediction#24, output: 0.448461
+prediction#25, output: 0.381934
+prediction#26, output: 0.305503
+prediction#27, output: 0.218186
+prediction#28, output: 0.119678
+prediction#29, output: 0.010966
+prediction#30, output: -0.105011
+prediction#31, output: -0.223045
+prediction#32, output: -0.336188
+prediction#33, output: -0.437284
+prediction#34, output: -0.520879
+prediction#35, output: -0.584401
+prediction#36, output: -0.628060
+prediction#37, output: -0.653823
+prediction#38, output: -0.664285
+prediction#39, output: -0.661888
+prediction#40, output: -0.648571
+prediction#41, output: -0.625686
+prediction#42, output: -0.594048
+prediction#43, output: -0.554025
+prediction#44, output: -0.505644
+prediction#45, output: -0.448691
+prediction#46, output: -0.382841
+prediction#47, output: -0.307812
+prediction#48, output: -0.223562
+prediction#49, output: -0.130537
+prediction#50, output: -0.029923
+prediction#51, output: 0.076151
+prediction#52, output: 0.184541
+prediction#53, output: 0.291221
+prediction#54, output: 0.391676
+prediction#55, output: 0.481560
+prediction#56, output: 0.557521
+prediction#57, output: 0.617876
+prediction#58, output: 0.662746
+prediction#59, output: 0.693595
+prediction#60, output: 0.712505
+prediction#61, output: 0.721581
+prediction#62, output: 0.722620
+prediction#63, output: 0.717004
+prediction#64, output: 0.705710
+prediction#65, output: 0.689363
+prediction#66, output: 0.668289
+prediction#67, output: 0.642563
+prediction#68, output: 0.612031
+prediction#69, output: 0.576337
+prediction#70, output: 0.534923
+prediction#71, output: 0.487045
+prediction#72, output: 0.431796
+prediction#73, output: 0.368164
+prediction#74, output: 0.295153
+prediction#75, output: 0.212022
+prediction#76, output: 0.118667
+prediction#77, output: 0.016137
+prediction#78, output: -0.092829
+prediction#79, output: -0.203575
+prediction#80, output: -0.309973
+prediction#81, output: -0.405665
+prediction#82, output: -0.485619
+prediction#83, output: -0.547183
+prediction#84, output: -0.590116
+prediction#85, output: -0.615837
+prediction#86, output: -0.626474
+prediction#87, output: -0.624155
+prediction#88, output: -0.610627
+prediction#89, output: -0.587144
+prediction#90, output: -0.554472
+prediction#91, output: -0.512970
+prediction#92, output: -0.462685
+prediction#93, output: -0.403464
+prediction#94, output: -0.335098
+prediction#95, output: -0.257495
+prediction#96, output: -0.170900
+prediction#97, output: -0.076139
+prediction#98, output: 0.025151
+prediction#99, output: 0.130383
+prediction#100, output: 0.236043
+outputs: [-0.00230449  0.12645769  0.25513193  0.37867919  0.49122247  0.58742154
+  0.66392732  0.72027004  0.75846982  0.78176367  0.79343021  0.79618788
+  0.79205906  0.78244913  0.76827681  0.75009108  0.72815537  0.70250332
+  0.67297018  0.6392076   0.60068524  0.556687    0.50630701  0.44846091
+  0.3819339   0.30550283  0.2181865   0.11967847  0.01096588 -0.10501133
+ -0.22304492 -0.33618754 -0.4372842  -0.52087873 -0.58440125 -0.62805974
+ -0.65382326 -0.66428483 -0.66188794 -0.64857084 -0.62568587 -0.59404778
+ -0.55402541 -0.50564384 -0.44869092 -0.38284123 -0.30781174 -0.22356203
+ -0.13053736 -0.02992305  0.07615122  0.18454066  0.29122081  0.39167634
+  0.48156038  0.5575211   0.61787581  0.66274619  0.69359505  0.71250546
+  0.72158134  0.72262001  0.7170037   0.7057097   0.68936265  0.66828918
+  0.64256263  0.61203134  0.57633686  0.5349226   0.4870449   0.43179634
+  0.36816373  0.29515275  0.21202227  0.11866653  0.01613668 -0.09282928
+ -0.20357499 -0.30997324 -0.40566462 -0.48561886 -0.54718286 -0.59011608
+ -0.61583698 -0.6264745  -0.62415469 -0.61062741 -0.58714384 -0.55447197
+ -0.51297033 -0.46268478 -0.40346384 -0.33509773 -0.25749481 -0.17089984
+ -0.07613921  0.02515081  0.13038298  0.23604253]
+
+real	2m48.836s
+user	1m26.877s
+sys	1m31.249s
