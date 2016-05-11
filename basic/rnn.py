@@ -5,16 +5,16 @@ import numpy as np
 import random
 
 def make_mini_batch(train_data, size_of_mini_batch, length_of_sequences):
-    inputs  = []
-    outputs = []
-    for i in range(size_of_mini_batch):
-        index  = random.randint(0, len(train_data) - length_of_sequences)
-        part   = np.matrix(train_data[index:index + length_of_sequences])
-        input  = np.array(part[:, 0])
-        output = [part[-1, 1]]
-        inputs.append(input)
-        outputs.append(output)
-    return (np.array(inputs), np.array(outputs))
+    inputs  = np.empty(0)
+    outputs = np.empty(0)
+    for _ in range(size_of_mini_batch):
+        index   = random.randint(0, len(train_data) - length_of_sequences)
+        part    = train_data[index:index + length_of_sequences]
+        inputs  = np.append(inputs, part[:, 0])
+        outputs = np.append(outputs, part[-1, 1])
+    inputs  = inputs.reshape(-1, length_of_sequences, 1)
+    outputs = outputs.reshape(-1, 1)
+    return (inputs, outputs)
 
 def make_prediction_initial(train_data, length_of_sequences):
     part = np.matrix(train_data[0:length_of_sequences])
@@ -24,20 +24,22 @@ num_of_input_nodes  = 1
 num_of_hidden_nodes = 2
 num_of_output_nodes = 1
 length_of_sequences = 50
-# num_of_steps        = 5000
-num_of_steps        = 1000
+num_of_epochs       = 1000
 size_of_mini_batch  = 100
 learning_rate       = 0.5
 print("num_of_input_nodes  = %d" % num_of_input_nodes)
 print("num_of_hidden_nodes = %d" % num_of_hidden_nodes)
 print("num_of_output_nodes = %d" % num_of_output_nodes)
 print("length_of_sequences = %d" % length_of_sequences)
-print("num_of_steps        = %d" % num_of_steps)
+print("num_of_epochs       = %d" % num_of_epochs)
 print("size_of_mini_batch  = %d" % size_of_mini_batch)
 print("learning_rate       = %f" % learning_rate)
 
-train_data = np.load("train_data.npy")
+train_data = np.load("../train_data/normal.npy")
 print(train_data)
+
+# 乱数シードを固定する
+random.seed(0)
 
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate)
 
@@ -52,10 +54,10 @@ with tf.Graph().as_default():
         bias1_var   = tf.Variable(tf.truncated_normal([num_of_hidden_nodes], stddev=0.1), name="bias1")
         bias2_var   = tf.Variable(tf.truncated_normal([num_of_output_nodes], stddev=0.1), name="bias2")
 
-        in1  = tf.transpose(input_ph, [1, 0, 2])         # (batch, sequence, data) -> (sequence, batch, data)
-        in2  = tf.reshape(in1, [-1, num_of_input_nodes]) # (sequence, batch, data) -> (sequence * batch, data)
-        in3  = tf.matmul(in2, weight1_var) + bias1_var
-        in4  = tf.split(0, length_of_sequences, in3)     # sequence * (batch, data)
+        in1 = tf.transpose(input_ph, [1, 0, 2])         # (batch, sequence, data) -> (sequence, batch, data)
+        in2 = tf.reshape(in1, [-1, num_of_input_nodes]) # (sequence, batch, data) -> (sequence * batch, data)
+        in3 = tf.matmul(in2, weight1_var) + bias1_var
+        in4 = tf.split(0, length_of_sequences, in3)     # sequence * (batch, data)
 
         cell = rnn_cell.BasicLSTMCell(num_of_hidden_nodes, forget_bias=1.0)
         rnn_output, states_op = rnn.rnn(cell, in4, initial_state=istate_ph)
@@ -77,7 +79,7 @@ with tf.Graph().as_default():
         summary_writer = tf.train.SummaryWriter("data", graph_def=sess.graph_def)
         sess.run(init)
 
-        for i in range(num_of_steps):
+        for i in range(num_of_epochs):
             inputs, outputs = make_mini_batch(train_data, size_of_mini_batch, length_of_sequences)
 
             train_dict = {
@@ -90,7 +92,7 @@ with tf.Graph().as_default():
             if (i + 1) % 10 == 0:
                 summary_str, train_loss = sess.run([summary_op, loss_op], feed_dict=train_dict)
                 summary_writer.add_summary(summary_str, i)
-                print("step#%d, train loss: %e" % (i + 1, train_loss))
+                print("epoch#%d, train loss: %e" % (i + 1, train_loss))
 
         inputs  = make_prediction_initial(train_data, length_of_sequences)
         outputs = np.empty((0, 1))
