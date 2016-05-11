@@ -105,7 +105,7 @@ with tf.Graph().as_default():
 
         for epoch in range(num_of_prediction_epochs):
             pred_dict = {
-                input_ph:  inputs.reshape((1, -1, 1)),
+                input_ph:  inputs.reshape((1, length_of_sequences, 1)),
                 istate_ph: states,
             }
             output, states = sess.run([output_op, states_op], feed_dict=pred_dict)
