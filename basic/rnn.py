@@ -16,27 +16,33 @@ def make_mini_batch(train_data, size_of_mini_batch, length_of_sequences):
     outputs = outputs.reshape(-1, 1)
     return (inputs, outputs)
 
-def make_prediction_initial(train_data, length_of_sequences):
-    part = np.matrix(train_data[0:length_of_sequences])
-    return np.array(part[:, 0])
+def make_prediction_initial(train_data, index, length_of_sequences):
+    return train_data[index:index + length_of_sequences, 0]
 
-num_of_input_nodes  = 1
-num_of_hidden_nodes = 2
-num_of_output_nodes = 1
-length_of_sequences = 50
-num_of_epochs       = 1000
-size_of_mini_batch  = 100
-learning_rate       = 0.5
-print("num_of_input_nodes  = %d" % num_of_input_nodes)
-print("num_of_hidden_nodes = %d" % num_of_hidden_nodes)
-print("num_of_output_nodes = %d" % num_of_output_nodes)
-print("length_of_sequences = %d" % length_of_sequences)
-print("num_of_epochs       = %d" % num_of_epochs)
-print("size_of_mini_batch  = %d" % size_of_mini_batch)
-print("learning_rate       = %f" % learning_rate)
+train_data_path          = "../train_data/normal.npy"
+num_of_input_nodes       = 1
+num_of_hidden_nodes      = 2
+num_of_output_nodes      = 1
+length_of_sequences      = 50
+# num_of_training_epochs  = 1000
+num_of_training_epochs   = 100
+num_of_prediction_epochs = 100
+size_of_mini_batch       = 100
+learning_rate            = 0.5
+forget_bias              = 1.0
+print("train_data_path          = %s" % train_data_path)
+print("num_of_input_nodes       = %d" % num_of_input_nodes)
+print("num_of_hidden_nodes      = %d" % num_of_hidden_nodes)
+print("num_of_output_nodes      = %d" % num_of_output_nodes)
+print("length_of_sequences      = %d" % length_of_sequences)
+print("num_of_training_epochs   = %d" % num_of_training_epochs)
+print("num_of_prediction_epochs = %d" % num_of_prediction_epochs)
+print("size_of_mini_batch       = %d" % size_of_mini_batch)
+print("learning_rate            = %f" % learning_rate)
+print("forget_bias              = %f" % forget_bias)
 
-train_data = np.load("../train_data/normal.npy")
-print(train_data)
+train_data = np.load(train_data_path)
+print("train_data:", train_data)
 
 # 乱数シードを固定する
 random.seed(0)
@@ -59,7 +65,7 @@ with tf.Graph().as_default():
         in3 = tf.matmul(in2, weight1_var) + bias1_var
         in4 = tf.split(0, length_of_sequences, in3)     # sequence * (batch, data)
 
-        cell = rnn_cell.BasicLSTMCell(num_of_hidden_nodes, forget_bias=1.0)
+        cell = rnn_cell.BasicLSTMCell(num_of_hidden_nodes, forget_bias=forget_bias)
         rnn_output, states_op = rnn.rnn(cell, in4, initial_state=istate_ph)
         output_op = tf.matmul(rnn_output[-1], weight2_var) + bias2_var
 
@@ -79,39 +85,38 @@ with tf.Graph().as_default():
         summary_writer = tf.train.SummaryWriter("data", graph_def=sess.graph_def)
         sess.run(init)
 
-        for i in range(num_of_epochs):
-            inputs, outputs = make_mini_batch(train_data, size_of_mini_batch, length_of_sequences)
+        for epoch in range(num_of_training_epochs):
+            inputs, supervisors = make_mini_batch(train_data, size_of_mini_batch, length_of_sequences)
 
             train_dict = {
                 input_ph:      inputs,
-                supervisor_ph: outputs,
+                supervisor_ph: supervisors,
                 istate_ph:     np.zeros((size_of_mini_batch, num_of_hidden_nodes * 2)),
             }
             sess.run(training_op, feed_dict=train_dict)
 
-            if (i + 1) % 10 == 0:
+            if (epoch + 1) % 10 == 0:
                 summary_str, train_loss = sess.run([summary_op, loss_op], feed_dict=train_dict)
-                summary_writer.add_summary(summary_str, i)
-                print("epoch#%d, train loss: %e" % (i + 1, train_loss))
+                summary_writer.add_summary(summary_str, epoch)
+                print("train#%d, train loss: %e" % (epoch + 1, train_loss))
 
-        inputs  = make_prediction_initial(train_data, length_of_sequences)
-        outputs = np.empty((0, 1))
+        inputs  = make_prediction_initial(train_data, 0, length_of_sequences)
+        outputs = np.empty(0)
         states  = np.zeros((num_of_hidden_nodes * 2)),
 
-        for i in range(100):
+        for epoch in range(num_of_prediction_epochs):
             pred_dict = {
-                input_ph:  np.array([inputs]),
+                input_ph:  inputs.reshape((1, -1, 1)),
                 istate_ph: states,
             }
-
             output, states = sess.run([output_op, states_op], feed_dict=pred_dict)
-            print("pred#%d, output: %f" % (i + 1, output))
+            print("prediction#%d, output: %f" % (epoch + 1, output))
 
-            inputs  = np.delete(inputs, 0)       # 先頭の要素を削除
-            inputs  = np.append(inputs, output).reshape((-1, 1))  # 末尾に要素を追加
-            outputs = np.append(outputs, output) # 末尾に要素を追加
+            inputs  = np.delete(inputs, 0)
+            inputs  = np.append(inputs, output)
+            outputs = np.append(outputs, output)
 
         print("outputs:", outputs)
         np.save("output.npy", np.array(outputs))
 
-        saver.save(sess, "data/out")
+        saver.save(sess, "data/model")
