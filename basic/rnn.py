@@ -81,7 +81,7 @@ with tf.Graph().as_default():
 
     with tf.Session() as sess:
         saver = tf.train.Saver()
-        summary_writer = tf.train.SummaryWriter("data")
+        summary_writer = tf.train.SummaryWriter("data", graph=sess.graph)
         sess.run(init)
 
         for epoch in range(num_of_training_epochs):
