@@ -24,8 +24,7 @@ num_of_input_nodes       = 1
 num_of_hidden_nodes      = 2
 num_of_output_nodes      = 1
 length_of_sequences      = 50
-# num_of_training_epochs  = 1000
-num_of_training_epochs   = 100
+num_of_training_epochs   = 1000
 num_of_prediction_epochs = 100
 size_of_mini_batch       = 100
 learning_rate            = 0.5
@@ -82,7 +81,7 @@ with tf.Graph().as_default():
 
     with tf.Session() as sess:
         saver = tf.train.Saver()
-        summary_writer = tf.train.SummaryWriter("data", graph_def=sess.graph_def)
+        summary_writer = tf.train.SummaryWriter("data")
         sess.run(init)
 
         for epoch in range(num_of_training_epochs):
