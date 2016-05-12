@@ -19,26 +19,28 @@ def make_mini_batch(train_data, size_of_mini_batch, length_of_sequences):
 def make_prediction_initial(train_data, index, length_of_sequences):
     return train_data[index:index + length_of_sequences, 0]
 
-train_data_path          = "../train_data/normal.npy"
-num_of_input_nodes       = 1
-num_of_hidden_nodes      = 2
-num_of_output_nodes      = 1
-length_of_sequences      = 50
-num_of_training_epochs   = 1000
-num_of_prediction_epochs = 100
-size_of_mini_batch       = 100
-learning_rate            = 0.1
-forget_bias              = 1.0
-print("train_data_path          = %s" % train_data_path)
-print("num_of_input_nodes       = %d" % num_of_input_nodes)
-print("num_of_hidden_nodes      = %d" % num_of_hidden_nodes)
-print("num_of_output_nodes      = %d" % num_of_output_nodes)
-print("length_of_sequences      = %d" % length_of_sequences)
-print("num_of_training_epochs   = %d" % num_of_training_epochs)
-print("num_of_prediction_epochs = %d" % num_of_prediction_epochs)
-print("size_of_mini_batch       = %d" % size_of_mini_batch)
-print("learning_rate            = %f" % learning_rate)
-print("forget_bias              = %f" % forget_bias)
+train_data_path             = "../train_data/normal.npy"
+num_of_input_nodes          = 1
+num_of_hidden_nodes         = 2
+num_of_output_nodes         = 1
+length_of_sequences         = 50
+num_of_training_epochs      = 1000
+length_of_initial_sequences = 50
+num_of_prediction_epochs    = 100
+size_of_mini_batch          = 100
+learning_rate               = 0.1
+forget_bias                 = 1.0
+print("train_data_path             = %s" % train_data_path)
+print("num_of_input_nodes          = %d" % num_of_input_nodes)
+print("num_of_hidden_nodes         = %d" % num_of_hidden_nodes)
+print("num_of_output_nodes         = %d" % num_of_output_nodes)
+print("length_of_sequences         = %d" % length_of_sequences)
+print("num_of_training_epochs      = %d" % num_of_training_epochs)
+print("length_of_initial_sequences = %d" % length_of_initial_sequences)
+print("num_of_prediction_epochs    = %d" % num_of_prediction_epochs)
+print("size_of_mini_batch          = %d" % size_of_mini_batch)
+print("learning_rate               = %f" % learning_rate)
+print("forget_bias                 = %f" % forget_bias)
 
 train_data = np.load(train_data_path)
 print("train_data:", train_data)
@@ -99,9 +101,12 @@ with tf.Graph().as_default():
                 summary_writer.add_summary(summary_str, epoch)
                 print("train#%d, train loss: %e" % (epoch + 1, train_loss))
 
-        inputs  = make_prediction_initial(train_data, 0, length_of_sequences)
+        inputs  = make_prediction_initial(train_data, 0, length_of_initial_sequences)
         outputs = np.empty(0)
         states  = np.zeros((num_of_hidden_nodes * 2)),
+
+        print("initial:", inputs)
+        np.save("initial.npy", inputs)
 
         for epoch in range(num_of_prediction_epochs):
             pred_dict = {
@@ -116,6 +121,6 @@ with tf.Graph().as_default():
             outputs = np.append(outputs, output)
 
         print("outputs:", outputs)
-        np.save("output.npy", np.array(outputs))
+        np.save("output.npy", outputs)
 
         saver.save(sess, "data/model")
