@@ -1,13 +1,14 @@
-train_data_path          = ../train_data/normal.npy
-num_of_input_nodes       = 1
-num_of_hidden_nodes      = 2
-num_of_output_nodes      = 1
-length_of_sequences      = 50
-num_of_training_epochs   = 1000
-num_of_prediction_epochs = 100
-size_of_mini_batch       = 100
-learning_rate            = 0.100000
-forget_bias              = 1.000000
+train_data_path             = ../train_data/normal.npy
+num_of_input_nodes          = 1
+num_of_hidden_nodes         = 2
+num_of_output_nodes         = 1
+length_of_sequences         = 50
+num_of_training_epochs      = 2000
+length_of_initial_sequences = 50
+num_of_prediction_epochs    = 100
+size_of_mini_batch          = 100
+learning_rate               = 0.100000
+forget_bias                 = 1.000000
 train_data: [[  0.00000000e+00   1.25333234e-01]
  [  1.25333234e-01   2.48689887e-01]
  [  2.48689887e-01   3.68124553e-01]
@@ -15,224 +16,337 @@ train_data: [[  0.00000000e+00   1.25333234e-01]
  [ -3.68124553e-01  -2.48689887e-01]
  [ -2.48689887e-01  -1.25333234e-01]
  [ -1.25333234e-01   3.92877345e-15]]
-train#10, train loss: 5.232192e-01
-train#20, train loss: 5.010345e-01
-train#30, train loss: 5.202867e-01
-train#40, train loss: 5.360007e-01
-train#50, train loss: 4.481648e-01
-train#60, train loss: 4.601893e-01
-train#70, train loss: 4.767358e-01
-train#80, train loss: 3.683131e-01
-train#90, train loss: 2.521414e-01
-train#100, train loss: 1.776398e-01
-train#110, train loss: 9.498769e-02
-train#120, train loss: 6.457195e-02
-train#130, train loss: 5.424558e-02
-train#140, train loss: 4.712017e-02
-train#150, train loss: 4.507850e-02
-train#160, train loss: 3.702382e-02
-train#170, train loss: 3.419126e-02
-train#180, train loss: 3.060424e-02
-train#190, train loss: 2.997156e-02
-train#200, train loss: 2.921304e-02
-train#210, train loss: 2.144124e-02
-train#220, train loss: 2.425282e-02
-train#230, train loss: 2.046308e-02
-train#240, train loss: 2.288784e-02
-train#250, train loss: 2.264111e-02
-train#260, train loss: 1.577813e-02
-train#270, train loss: 1.713453e-02
-train#280, train loss: 1.530980e-02
-train#290, train loss: 1.660717e-02
-train#300, train loss: 1.324682e-02
-train#310, train loss: 1.292091e-02
-train#320, train loss: 1.278176e-02
-train#330, train loss: 1.241986e-02
-train#340, train loss: 1.178413e-02
-train#350, train loss: 1.154404e-02
-train#360, train loss: 1.007975e-02
-train#370, train loss: 8.637670e-03
-train#380, train loss: 8.993944e-03
-train#390, train loss: 8.487168e-03
-train#400, train loss: 8.826821e-03
-train#410, train loss: 7.320656e-03
-train#420, train loss: 6.381793e-03
-train#430, train loss: 7.028408e-03
-train#440, train loss: 7.145051e-03
-train#450, train loss: 7.857284e-03
-train#460, train loss: 6.681419e-03
-train#470, train loss: 6.893535e-03
-train#480, train loss: 5.993830e-03
-train#490, train loss: 5.199163e-03
-train#500, train loss: 6.163324e-03
-train#510, train loss: 5.385712e-03
-train#520, train loss: 5.606339e-03
-train#530, train loss: 5.443939e-03
-train#540, train loss: 5.064153e-03
-train#550, train loss: 3.807908e-03
-train#560, train loss: 4.886667e-03
-train#570, train loss: 5.063960e-03
-train#580, train loss: 4.280763e-03
-train#590, train loss: 3.850285e-03
-train#600, train loss: 3.813511e-03
-train#610, train loss: 3.842188e-03
-train#620, train loss: 3.438805e-03
-train#630, train loss: 3.981114e-03
-train#640, train loss: 3.400723e-03
-train#650, train loss: 3.175893e-03
-train#660, train loss: 3.077822e-03
-train#670, train loss: 3.125801e-03
-train#680, train loss: 2.886330e-03
-train#690, train loss: 2.429674e-03
-train#700, train loss: 2.828352e-03
-train#710, train loss: 2.820818e-03
-train#720, train loss: 2.848949e-03
-train#730, train loss: 2.594470e-03
-train#740, train loss: 2.318024e-03
-train#750, train loss: 2.217262e-03
-train#760, train loss: 2.268199e-03
-train#770, train loss: 2.655973e-03
-train#780, train loss: 2.361165e-03
-train#790, train loss: 2.186151e-03
-train#800, train loss: 2.385404e-03
-train#810, train loss: 1.768075e-03
-train#820, train loss: 2.212171e-03
-train#830, train loss: 2.024553e-03
-train#840, train loss: 1.623905e-03
-train#850, train loss: 1.738755e-03
-train#860, train loss: 1.954965e-03
-train#870, train loss: 1.785732e-03
-train#880, train loss: 1.678623e-03
-train#890, train loss: 1.682880e-03
-train#900, train loss: 1.701307e-03
-train#910, train loss: 1.470105e-03
-train#920, train loss: 1.752510e-03
-train#930, train loss: 1.387122e-03
-train#940, train loss: 1.508713e-03
-train#950, train loss: 1.656188e-03
-train#960, train loss: 1.509062e-03
-train#970, train loss: 1.446010e-03
-train#980, train loss: 1.581926e-03
-train#990, train loss: 1.585674e-03
-train#1000, train loss: 1.555989e-03
-prediction#1, output: -0.002304
-prediction#2, output: 0.126458
-prediction#3, output: 0.255132
-prediction#4, output: 0.378679
-prediction#5, output: 0.491222
-prediction#6, output: 0.587422
-prediction#7, output: 0.663927
-prediction#8, output: 0.720270
-prediction#9, output: 0.758470
-prediction#10, output: 0.781764
-prediction#11, output: 0.793430
-prediction#12, output: 0.796188
-prediction#13, output: 0.792059
-prediction#14, output: 0.782449
-prediction#15, output: 0.768277
-prediction#16, output: 0.750091
-prediction#17, output: 0.728155
-prediction#18, output: 0.702503
-prediction#19, output: 0.672970
-prediction#20, output: 0.639208
-prediction#21, output: 0.600685
-prediction#22, output: 0.556687
-prediction#23, output: 0.506307
-prediction#24, output: 0.448461
-prediction#25, output: 0.381934
-prediction#26, output: 0.305503
-prediction#27, output: 0.218186
-prediction#28, output: 0.119678
-prediction#29, output: 0.010966
-prediction#30, output: -0.105011
-prediction#31, output: -0.223045
-prediction#32, output: -0.336188
-prediction#33, output: -0.437284
-prediction#34, output: -0.520879
-prediction#35, output: -0.584401
-prediction#36, output: -0.628060
-prediction#37, output: -0.653823
-prediction#38, output: -0.664285
-prediction#39, output: -0.661888
-prediction#40, output: -0.648571
-prediction#41, output: -0.625686
-prediction#42, output: -0.594048
-prediction#43, output: -0.554025
-prediction#44, output: -0.505644
-prediction#45, output: -0.448691
-prediction#46, output: -0.382841
-prediction#47, output: -0.307812
-prediction#48, output: -0.223562
-prediction#49, output: -0.130537
-prediction#50, output: -0.029923
-prediction#51, output: 0.076151
-prediction#52, output: 0.184541
-prediction#53, output: 0.291221
-prediction#54, output: 0.391676
-prediction#55, output: 0.481560
-prediction#56, output: 0.557521
-prediction#57, output: 0.617876
-prediction#58, output: 0.662746
-prediction#59, output: 0.693595
-prediction#60, output: 0.712505
-prediction#61, output: 0.721581
-prediction#62, output: 0.722620
-prediction#63, output: 0.717004
-prediction#64, output: 0.705710
-prediction#65, output: 0.689363
-prediction#66, output: 0.668289
-prediction#67, output: 0.642563
-prediction#68, output: 0.612031
-prediction#69, output: 0.576337
-prediction#70, output: 0.534923
-prediction#71, output: 0.487045
-prediction#72, output: 0.431796
-prediction#73, output: 0.368164
-prediction#74, output: 0.295153
-prediction#75, output: 0.212022
-prediction#76, output: 0.118667
-prediction#77, output: 0.016137
-prediction#78, output: -0.092829
-prediction#79, output: -0.203575
-prediction#80, output: -0.309973
-prediction#81, output: -0.405665
-prediction#82, output: -0.485619
-prediction#83, output: -0.547183
-prediction#84, output: -0.590116
-prediction#85, output: -0.615837
-prediction#86, output: -0.626474
-prediction#87, output: -0.624155
-prediction#88, output: -0.610627
-prediction#89, output: -0.587144
-prediction#90, output: -0.554472
-prediction#91, output: -0.512970
-prediction#92, output: -0.462685
-prediction#93, output: -0.403464
-prediction#94, output: -0.335098
-prediction#95, output: -0.257495
-prediction#96, output: -0.170900
-prediction#97, output: -0.076139
-prediction#98, output: 0.025151
-prediction#99, output: 0.130383
-prediction#100, output: 0.236043
-outputs: [-0.00230449  0.12645769  0.25513193  0.37867919  0.49122247  0.58742154
-  0.66392732  0.72027004  0.75846982  0.78176367  0.79343021  0.79618788
-  0.79205906  0.78244913  0.76827681  0.75009108  0.72815537  0.70250332
-  0.67297018  0.6392076   0.60068524  0.556687    0.50630701  0.44846091
-  0.3819339   0.30550283  0.2181865   0.11967847  0.01096588 -0.10501133
- -0.22304492 -0.33618754 -0.4372842  -0.52087873 -0.58440125 -0.62805974
- -0.65382326 -0.66428483 -0.66188794 -0.64857084 -0.62568587 -0.59404778
- -0.55402541 -0.50564384 -0.44869092 -0.38284123 -0.30781174 -0.22356203
- -0.13053736 -0.02992305  0.07615122  0.18454066  0.29122081  0.39167634
-  0.48156038  0.5575211   0.61787581  0.66274619  0.69359505  0.71250546
-  0.72158134  0.72262001  0.7170037   0.7057097   0.68936265  0.66828918
-  0.64256263  0.61203134  0.57633686  0.5349226   0.4870449   0.43179634
-  0.36816373  0.29515275  0.21202227  0.11866653  0.01613668 -0.09282928
- -0.20357499 -0.30997324 -0.40566462 -0.48561886 -0.54718286 -0.59011608
- -0.61583698 -0.6264745  -0.62415469 -0.61062741 -0.58714384 -0.55447197
- -0.51297033 -0.46268478 -0.40346384 -0.33509773 -0.25749481 -0.17089984
- -0.07613921  0.02515081  0.13038298  0.23604253]
+train#10, train loss: 5.196649e-01
+train#20, train loss: 4.860791e-01
+train#30, train loss: 4.625520e-01
+train#40, train loss: 3.866434e-01
+train#50, train loss: 2.431214e-01
+train#60, train loss: 1.842195e-01
+train#70, train loss: 1.631761e-01
+train#80, train loss: 1.113452e-01
+train#90, train loss: 1.008956e-01
+train#100, train loss: 7.486184e-02
+train#110, train loss: 6.785653e-02
+train#120, train loss: 5.358423e-02
+train#130, train loss: 5.052997e-02
+train#140, train loss: 4.811502e-02
+train#150, train loss: 4.689507e-02
+train#160, train loss: 3.832300e-02
+train#170, train loss: 3.663130e-02
+train#180, train loss: 3.274991e-02
+train#190, train loss: 3.191875e-02
+train#200, train loss: 3.157162e-02
+train#210, train loss: 2.258469e-02
+train#220, train loss: 2.597379e-02
+train#230, train loss: 2.087565e-02
+train#240, train loss: 2.328876e-02
+train#250, train loss: 2.297943e-02
+train#260, train loss: 1.618721e-02
+train#270, train loss: 1.757786e-02
+train#280, train loss: 1.429196e-02
+train#290, train loss: 1.619192e-02
+train#300, train loss: 1.316023e-02
+train#310, train loss: 1.208767e-02
+train#320, train loss: 1.219112e-02
+train#330, train loss: 1.126459e-02
+train#340, train loss: 1.027859e-02
+train#350, train loss: 9.520594e-03
+train#360, train loss: 9.616144e-03
+train#370, train loss: 8.467629e-03
+train#380, train loss: 8.088505e-03
+train#390, train loss: 6.634104e-03
+train#400, train loss: 7.148346e-03
+train#410, train loss: 6.146711e-03
+train#420, train loss: 5.271893e-03
+train#430, train loss: 5.525510e-03
+train#440, train loss: 5.802804e-03
+train#450, train loss: 5.985167e-03
+train#460, train loss: 5.280831e-03
+train#470, train loss: 4.197383e-03
+train#480, train loss: 4.947311e-03
+train#490, train loss: 4.039208e-03
+train#500, train loss: 4.637542e-03
+train#510, train loss: 3.402472e-03
+train#520, train loss: 4.533545e-03
+train#530, train loss: 3.662093e-03
+train#540, train loss: 3.403605e-03
+train#550, train loss: 3.162264e-03
+train#560, train loss: 3.529398e-03
+train#570, train loss: 3.647643e-03
+train#580, train loss: 3.292506e-03
+train#590, train loss: 2.931774e-03
+train#600, train loss: 2.870103e-03
+train#610, train loss: 2.905814e-03
+train#620, train loss: 2.779494e-03
+train#630, train loss: 2.790397e-03
+train#640, train loss: 2.505230e-03
+train#650, train loss: 2.329786e-03
+train#660, train loss: 2.360245e-03
+train#670, train loss: 2.374002e-03
+train#680, train loss: 2.183416e-03
+train#690, train loss: 1.960889e-03
+train#700, train loss: 2.239358e-03
+train#710, train loss: 2.199824e-03
+train#720, train loss: 2.282126e-03
+train#730, train loss: 2.139663e-03
+train#740, train loss: 1.930239e-03
+train#750, train loss: 2.023593e-03
+train#760, train loss: 1.826149e-03
+train#770, train loss: 2.143597e-03
+train#780, train loss: 1.892479e-03
+train#790, train loss: 1.850395e-03
+train#800, train loss: 1.959630e-03
+train#810, train loss: 1.642328e-03
+train#820, train loss: 1.973918e-03
+train#830, train loss: 1.616350e-03
+train#840, train loss: 1.646031e-03
+train#850, train loss: 1.621280e-03
+train#860, train loss: 1.824378e-03
+train#870, train loss: 1.737912e-03
+train#880, train loss: 1.501814e-03
+train#890, train loss: 1.704731e-03
+train#900, train loss: 1.585223e-03
+train#910, train loss: 1.455147e-03
+train#920, train loss: 1.521283e-03
+train#930, train loss: 1.355250e-03
+train#940, train loss: 1.557030e-03
+train#950, train loss: 1.515331e-03
+train#960, train loss: 1.369516e-03
+train#970, train loss: 1.344415e-03
+train#980, train loss: 1.551980e-03
+train#990, train loss: 1.486299e-03
+train#1000, train loss: 1.438643e-03
+train#1010, train loss: 1.171388e-03
+train#1020, train loss: 1.032476e-03
+train#1030, train loss: 1.337324e-03
+train#1040, train loss: 1.289763e-03
+train#1050, train loss: 1.175715e-03
+train#1060, train loss: 1.288258e-03
+train#1070, train loss: 1.345251e-03
+train#1080, train loss: 1.024851e-03
+train#1090, train loss: 1.202987e-03
+train#1100, train loss: 1.039673e-03
+train#1110, train loss: 1.113691e-03
+train#1120, train loss: 1.106208e-03
+train#1130, train loss: 1.170953e-03
+train#1140, train loss: 1.082476e-03
+train#1150, train loss: 1.194229e-03
+train#1160, train loss: 1.018422e-03
+train#1170, train loss: 1.277826e-03
+train#1180, train loss: 1.093766e-03
+train#1190, train loss: 1.026113e-03
+train#1200, train loss: 9.955495e-04
+train#1210, train loss: 1.009742e-03
+train#1220, train loss: 1.106414e-03
+train#1230, train loss: 1.167171e-03
+train#1240, train loss: 1.138204e-03
+train#1250, train loss: 1.046251e-03
+train#1260, train loss: 1.144755e-03
+train#1270, train loss: 1.083379e-03
+train#1280, train loss: 1.043815e-03
+train#1290, train loss: 1.002537e-03
+train#1300, train loss: 1.036933e-03
+train#1310, train loss: 9.823933e-04
+train#1320, train loss: 1.078095e-03
+train#1330, train loss: 7.684582e-04
+train#1340, train loss: 9.308960e-04
+train#1350, train loss: 8.673056e-04
+train#1360, train loss: 7.661567e-04
+train#1370, train loss: 8.955671e-04
+train#1380, train loss: 9.041821e-04
+train#1390, train loss: 8.763126e-04
+train#1400, train loss: 9.236415e-04
+train#1410, train loss: 8.764826e-04
+train#1420, train loss: 9.009761e-04
+train#1430, train loss: 9.834550e-04
+train#1440, train loss: 8.074782e-04
+train#1450, train loss: 9.817993e-04
+train#1460, train loss: 9.301828e-04
+train#1470, train loss: 8.180525e-04
+train#1480, train loss: 8.711673e-04
+train#1490, train loss: 7.743075e-04
+train#1500, train loss: 9.484914e-04
+train#1510, train loss: 8.581669e-04
+train#1520, train loss: 8.276161e-04
+train#1530, train loss: 8.177793e-04
+train#1540, train loss: 6.596654e-04
+train#1550, train loss: 7.790176e-04
+train#1560, train loss: 8.230050e-04
+train#1570, train loss: 8.506093e-04
+train#1580, train loss: 8.514096e-04
+train#1590, train loss: 8.807645e-04
+train#1600, train loss: 8.738578e-04
+train#1610, train loss: 8.647711e-04
+train#1620, train loss: 8.571532e-04
+train#1630, train loss: 7.494903e-04
+train#1640, train loss: 6.741512e-04
+train#1650, train loss: 7.472940e-04
+train#1660, train loss: 6.634135e-04
+train#1670, train loss: 8.008303e-04
+train#1680, train loss: 7.741742e-04
+train#1690, train loss: 6.941359e-04
+train#1700, train loss: 7.107725e-04
+train#1710, train loss: 7.570721e-04
+train#1720, train loss: 7.946870e-04
+train#1730, train loss: 6.424984e-04
+train#1740, train loss: 7.362764e-04
+train#1750, train loss: 6.923567e-04
+train#1760, train loss: 7.518352e-04
+train#1770, train loss: 7.354455e-04
+train#1780, train loss: 7.119450e-04
+train#1790, train loss: 6.664392e-04
+train#1800, train loss: 7.315385e-04
+train#1810, train loss: 6.634542e-04
+train#1820, train loss: 6.125940e-04
+train#1830, train loss: 5.787459e-04
+train#1840, train loss: 7.176154e-04
+train#1850, train loss: 6.892144e-04
+train#1860, train loss: 6.958137e-04
+train#1870, train loss: 6.128909e-04
+train#1880, train loss: 7.175937e-04
+train#1890, train loss: 6.989300e-04
+train#1900, train loss: 6.794175e-04
+train#1910, train loss: 6.193092e-04
+train#1920, train loss: 7.102641e-04
+train#1930, train loss: 6.894714e-04
+train#1940, train loss: 7.428146e-04
+train#1950, train loss: 5.990989e-04
+train#1960, train loss: 7.139940e-04
+train#1970, train loss: 5.867194e-04
+train#1980, train loss: 7.373670e-04
+train#1990, train loss: 6.171659e-04
+train#2000, train loss: 5.260750e-04
+initial: [  0.00000000e+00   1.25333234e-01   2.48689887e-01   3.68124553e-01
+   4.81753674e-01   5.87785252e-01   6.84547106e-01   7.70513243e-01
+   8.44327926e-01   9.04827052e-01   9.51056516e-01   9.82287251e-01
+   9.98026728e-01   9.98026728e-01   9.82287251e-01   9.51056516e-01
+   9.04827052e-01   8.44327926e-01   7.70513243e-01   6.84547106e-01
+   5.87785252e-01   4.81753674e-01   3.68124553e-01   2.48689887e-01
+   1.25333234e-01  -3.21624530e-16  -1.25333234e-01  -2.48689887e-01
+  -3.68124553e-01  -4.81753674e-01  -5.87785252e-01  -6.84547106e-01
+  -7.70513243e-01  -8.44327926e-01  -9.04827052e-01  -9.51056516e-01
+  -9.82287251e-01  -9.98026728e-01  -9.98026728e-01  -9.82287251e-01
+  -9.51056516e-01  -9.04827052e-01  -8.44327926e-01  -7.70513243e-01
+  -6.84547106e-01  -5.87785252e-01  -4.81753674e-01  -3.68124553e-01
+  -2.48689887e-01  -1.25333234e-01]
+prediction#1, output: 0.018170
+prediction#2, output: 0.167308
+prediction#3, output: 0.320011
+prediction#4, output: 0.468687
+prediction#5, output: 0.603634
+prediction#6, output: 0.715902
+prediction#7, output: 0.800507
+prediction#8, output: 0.857531
+prediction#9, output: 0.890546
+prediction#10, output: 0.904243
+prediction#11, output: 0.902919
+prediction#12, output: 0.889959
+prediction#13, output: 0.867850
+prediction#14, output: 0.838334
+prediction#15, output: 0.802584
+prediction#16, output: 0.761335
+prediction#17, output: 0.714978
+prediction#18, output: 0.663621
+prediction#19, output: 0.607125
+prediction#20, output: 0.545131
+prediction#21, output: 0.477078
+prediction#22, output: 0.402221
+prediction#23, output: 0.319681
+prediction#24, output: 0.228534
+prediction#25, output: 0.127982
+prediction#26, output: 0.017644
+prediction#27, output: -0.101998
+prediction#28, output: -0.229072
+prediction#29, output: -0.359875
+prediction#30, output: -0.488863
+prediction#31, output: -0.609407
+prediction#32, output: -0.715220
+prediction#33, output: -0.801853
+prediction#34, output: -0.867456
+prediction#35, output: -0.912544
+prediction#36, output: -0.939149
+prediction#37, output: -0.949906
+prediction#38, output: -0.947418
+prediction#39, output: -0.933929
+prediction#40, output: -0.911227
+prediction#41, output: -0.880653
+prediction#42, output: -0.843167
+prediction#43, output: -0.799408
+prediction#44, output: -0.749757
+prediction#45, output: -0.694380
+prediction#46, output: -0.633262
+prediction#47, output: -0.566239
+prediction#48, output: -0.493017
+prediction#49, output: -0.413208
+prediction#50, output: -0.326377
+prediction#51, output: -0.232135
+prediction#52, output: -0.130281
+prediction#53, output: -0.021047
+prediction#54, output: 0.094561
+prediction#55, output: 0.214362
+prediction#56, output: 0.334682
+prediction#57, output: 0.450411
+prediction#58, output: 0.555711
+prediction#59, output: 0.645345
+prediction#60, output: 0.716025
+prediction#61, output: 0.766973
+prediction#62, output: 0.799476
+prediction#63, output: 0.815914
+prediction#64, output: 0.818906
+prediction#65, output: 0.810814
+prediction#66, output: 0.793553
+prediction#67, output: 0.768578
+prediction#68, output: 0.736925
+prediction#69, output: 0.699274
+prediction#70, output: 0.656003
+prediction#71, output: 0.607228
+prediction#72, output: 0.552831
+prediction#73, output: 0.492479
+prediction#74, output: 0.425651
+prediction#75, output: 0.351665
+prediction#76, output: 0.269736
+prediction#77, output: 0.179089
+prediction#78, output: 0.079160
+prediction#79, output: -0.030094
+prediction#80, output: -0.147760
+prediction#81, output: -0.271501
+prediction#82, output: -0.397264
+prediction#83, output: -0.519478
+prediction#84, output: -0.631936
+prediction#85, output: -0.729152
+prediction#86, output: -0.807560
+prediction#87, output: -0.865964
+prediction#88, output: -0.905172
+prediction#89, output: -0.927191
+prediction#90, output: -0.934459
+prediction#91, output: -0.929328
+prediction#92, output: -0.913806
+prediction#93, output: -0.889489
+prediction#94, output: -0.857571
+prediction#95, output: -0.818902
+prediction#96, output: -0.774039
+prediction#97, output: -0.723303
+prediction#98, output: -0.666814
+prediction#99, output: -0.604524
+prediction#100, output: -0.536241
+outputs: [ 0.01816994  0.16730818  0.32001099  0.46868694  0.60363388  0.71590197
+  0.80050695  0.85753089  0.89054608  0.90424329  0.90291858  0.88995934
+  0.86784983  0.83833361  0.80258352  0.76133496  0.7149784   0.66362107
+  0.6071251   0.54513144  0.4770776   0.40222058  0.31968117  0.22853443
+  0.12798166  0.01764446 -0.10199758 -0.22907224 -0.35987493 -0.48886338
+ -0.60940671 -0.71522009 -0.80185318 -0.8674556  -0.91254377 -0.93914878
+ -0.94990599 -0.94741786 -0.93392909 -0.91122663 -0.88065338 -0.8431673
+ -0.79940832 -0.74975729 -0.69437957 -0.63326204 -0.56623876 -0.49301687
+ -0.41320774 -0.32637736 -0.23213467 -0.13028058 -0.02104703  0.09456092
+  0.21436191  0.33468249  0.45041138  0.55571097  0.64534527  0.71602499
+  0.7669732   0.79947579  0.81591392  0.81890619  0.81081355  0.79355299
+  0.76857781  0.73692465  0.69927394  0.65600336  0.60722834  0.55283052
+  0.49247906  0.42565149  0.35166508  0.2697356   0.17908922  0.07916024
+ -0.03009382 -0.14776012 -0.27150109 -0.39726391 -0.51947784 -0.63193619
+ -0.72915244 -0.80755985 -0.86596382 -0.90517151 -0.92719078 -0.93445933
+ -0.92932796 -0.91380644 -0.88948905 -0.85757124 -0.81890178 -0.77403903
+ -0.7233032  -0.66681433 -0.60452402 -0.53624094]
 
-real	2m48.836s
-user	1m26.877s
-sys	1m31.249s
+real	5m13.015s
+user	2m52.938s
+sys	3m33.599s

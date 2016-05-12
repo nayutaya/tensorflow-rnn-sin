@@ -24,7 +24,7 @@ num_of_input_nodes          = 1
 num_of_hidden_nodes         = 2
 num_of_output_nodes         = 1
 length_of_sequences         = 50
-num_of_training_epochs      = 1000
+num_of_training_epochs      = 2000
 length_of_initial_sequences = 50
 num_of_prediction_epochs    = 100
 size_of_mini_batch          = 100
@@ -45,8 +45,10 @@ print("forget_bias                 = %f" % forget_bias)
 train_data = np.load(train_data_path)
 print("train_data:", train_data)
 
-# 乱数シードを固定する
+# 乱数シードを固定する。
 random.seed(0)
+np.random.seed(0)
+tf.set_random_seed(0)
 
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate)
 
