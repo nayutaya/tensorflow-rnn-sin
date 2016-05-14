@@ -93,7 +93,7 @@ with tf.Graph().as_default():
         summary_writer = tf.train.SummaryWriter("data", graph=sess.graph)
         sess.run(init)
 
-        lesses = np.empty((0, 2))
+        losses = np.empty((0, 2))
 
         for epoch in range(num_of_training_epochs):
             inputs, supervisors = make_mini_batch(train_data, size_of_mini_batch, length_of_sequences)
@@ -108,11 +108,11 @@ with tf.Graph().as_default():
             if (epoch + 1) % 10 == 0:
                 summary_str, train_loss = sess.run([summary_op, loss_op], feed_dict=train_dict)
                 summary_writer.add_summary(summary_str, epoch)
-                lesses = np.append(lesses, [[epoch + 1, train_loss]], axis=0)
+                losses = np.append(losses, [[epoch + 1, train_loss]], axis=0)
                 print("train#%d, train loss: %e" % (epoch + 1, train_loss))
 
-        print("lesses:", lesses)
-        np.save("lesses.npy", lesses)
+        print("losses:", losses)
+        np.save("losses.npy", losses)
 
         inputs  = train_data[0:length_of_sequences, 0]
         outputs = np.empty(0)
