@@ -11,8 +11,7 @@ num_of_output_nodes: 1
 # RNNのシーケンス長
 length_of_sequences: 50
 # 学習の繰り返し回数
-# num_of_training_epochs: 2000
-num_of_training_epochs: 10
+num_of_training_epochs: 2000
 # 予測の繰り返し回数
 num_of_prediction_epochs: 100
 # ミニバッチあたりのサンプル数
