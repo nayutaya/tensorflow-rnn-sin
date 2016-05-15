@@ -47,6 +47,8 @@ forget_bias              = param["forget_bias"]
 
 if param["optimizer"] == "GradientDescentOptimizer":
     optimizer = tf.train.GradientDescentOptimizer(learning_rate=learning_rate)
+elif param["optimizer"] == "AdamOptimizer":
+    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
 else:
     raise Exception("unknown optimizer -- %s" % param["optimizer"])
 
