@@ -1,0 +1,354 @@
+param_path: param.yaml
+num_of_input_nodes: 1
+learning_rate: 0.1
+num_of_prediction_epochs: 100
+num_of_hidden_nodes: 2
+train_data_path: ../train_data/normal.npy
+seed: 0
+optimizer: GradientDescentOptimizer
+num_of_training_epochs: 1000
+num_of_output_nodes: 1
+length_of_sequences: 50
+forget_bias: 1.0
+size_of_mini_batch: 100
+train_data: [[  0.00000000e+00   1.25333234e-01]
+ [  1.25333234e-01   2.48689887e-01]
+ [  2.48689887e-01   3.68124553e-01]
+ ..., 
+ [ -3.68124553e-01  -2.48689887e-01]
+ [ -2.48689887e-01  -1.25333234e-01]
+ [ -1.25333234e-01   3.92877345e-15]]
+train#10, train loss: 5.188468e-01
+train#20, train loss: 4.833842e-01
+train#30, train loss: 4.512945e-01
+train#40, train loss: 3.503923e-01
+train#50, train loss: 1.809541e-01
+train#60, train loss: 1.190029e-01
+train#70, train loss: 9.989666e-02
+train#80, train loss: 6.898050e-02
+train#90, train loss: 5.800522e-02
+train#100, train loss: 3.880820e-02
+train#110, train loss: 2.722501e-02
+train#120, train loss: 1.862432e-02
+train#130, train loss: 1.258583e-02
+train#140, train loss: 8.337989e-03
+train#150, train loss: 6.972056e-03
+train#160, train loss: 5.563926e-03
+train#170, train loss: 4.869593e-03
+train#180, train loss: 4.323547e-03
+train#190, train loss: 3.769595e-03
+train#200, train loss: 2.747686e-03
+train#210, train loss: 3.249244e-03
+train#220, train loss: 2.734571e-03
+train#230, train loss: 2.683762e-03
+train#240, train loss: 2.757640e-03
+train#250, train loss: 2.354745e-03
+train#260, train loss: 2.218074e-03
+train#270, train loss: 2.354584e-03
+train#280, train loss: 2.517998e-03
+train#290, train loss: 1.531990e-03
+train#300, train loss: 1.796666e-03
+train#310, train loss: 1.606134e-03
+train#320, train loss: 1.543005e-03
+train#330, train loss: 2.000404e-03
+train#340, train loss: 1.938933e-03
+train#350, train loss: 1.600322e-03
+train#360, train loss: 1.580542e-03
+train#370, train loss: 2.470451e-03
+train#380, train loss: 1.954660e-03
+train#390, train loss: 1.630347e-03
+train#400, train loss: 1.506659e-03
+train#410, train loss: 1.081086e-03
+train#420, train loss: 1.191288e-03
+train#430, train loss: 1.384485e-03
+train#440, train loss: 1.053078e-03
+train#450, train loss: 1.050505e-03
+train#460, train loss: 1.536548e-03
+train#470, train loss: 1.590232e-03
+train#480, train loss: 1.966933e-03
+train#490, train loss: 1.264237e-03
+train#500, train loss: 1.097384e-03
+train#510, train loss: 1.242955e-03
+train#520, train loss: 1.387602e-03
+train#530, train loss: 1.158162e-03
+train#540, train loss: 1.129497e-03
+train#550, train loss: 8.400705e-04
+train#560, train loss: 1.237732e-03
+train#570, train loss: 1.332386e-03
+train#580, train loss: 9.426913e-04
+train#590, train loss: 9.503533e-04
+train#600, train loss: 1.057042e-03
+train#610, train loss: 1.550809e-03
+train#620, train loss: 1.682095e-03
+train#630, train loss: 9.486720e-04
+train#640, train loss: 1.653974e-03
+train#650, train loss: 1.463422e-03
+train#660, train loss: 1.085852e-03
+train#670, train loss: 9.403240e-04
+train#680, train loss: 9.294997e-04
+train#690, train loss: 7.037739e-04
+train#700, train loss: 1.241416e-03
+train#710, train loss: 1.027932e-03
+train#720, train loss: 1.820876e-03
+train#730, train loss: 1.160886e-03
+train#740, train loss: 1.071808e-03
+train#750, train loss: 9.244491e-04
+train#760, train loss: 9.496402e-04
+train#770, train loss: 1.046945e-03
+train#780, train loss: 8.095953e-04
+train#790, train loss: 1.146800e-03
+train#800, train loss: 8.928933e-04
+train#810, train loss: 8.309844e-04
+train#820, train loss: 8.647871e-04
+train#830, train loss: 9.830237e-04
+train#840, train loss: 8.924426e-04
+train#850, train loss: 1.049786e-03
+train#860, train loss: 8.841018e-04
+train#870, train loss: 1.339040e-03
+train#880, train loss: 9.894915e-04
+train#890, train loss: 9.229702e-04
+train#900, train loss: 1.308683e-03
+train#910, train loss: 8.383594e-04
+train#920, train loss: 7.919671e-04
+train#930, train loss: 1.534475e-03
+train#940, train loss: 7.600319e-04
+train#950, train loss: 1.495383e-03
+train#960, train loss: 7.791143e-04
+train#970, train loss: 6.951652e-04
+train#980, train loss: 6.814795e-04
+train#990, train loss: 7.194701e-04
+train#1000, train loss: 7.360254e-04
+losses: [[  1.00000000e+01   5.18846750e-01]
+ [  2.00000000e+01   4.83384222e-01]
+ [  3.00000000e+01   4.51294541e-01]
+ [  4.00000000e+01   3.50392312e-01]
+ [  5.00000000e+01   1.80954114e-01]
+ [  6.00000000e+01   1.19002916e-01]
+ [  7.00000000e+01   9.98966619e-02]
+ [  8.00000000e+01   6.89805001e-02]
+ [  9.00000000e+01   5.80052175e-02]
+ [  1.00000000e+02   3.88081968e-02]
+ [  1.10000000e+02   2.72250064e-02]
+ [  1.20000000e+02   1.86243150e-02]
+ [  1.30000000e+02   1.25858299e-02]
+ [  1.40000000e+02   8.33798945e-03]
+ [  1.50000000e+02   6.97205588e-03]
+ [  1.60000000e+02   5.56392595e-03]
+ [  1.70000000e+02   4.86959331e-03]
+ [  1.80000000e+02   4.32354677e-03]
+ [  1.90000000e+02   3.76959541e-03]
+ [  2.00000000e+02   2.74768611e-03]
+ [  2.10000000e+02   3.24924407e-03]
+ [  2.20000000e+02   2.73457076e-03]
+ [  2.30000000e+02   2.68376223e-03]
+ [  2.40000000e+02   2.75764009e-03]
+ [  2.50000000e+02   2.35474505e-03]
+ [  2.60000000e+02   2.21807370e-03]
+ [  2.70000000e+02   2.35458370e-03]
+ [  2.80000000e+02   2.51799799e-03]
+ [  2.90000000e+02   1.53199048e-03]
+ [  3.00000000e+02   1.79666583e-03]
+ [  3.10000000e+02   1.60613435e-03]
+ [  3.20000000e+02   1.54300476e-03]
+ [  3.30000000e+02   2.00040429e-03]
+ [  3.40000000e+02   1.93893281e-03]
+ [  3.50000000e+02   1.60032231e-03]
+ [  3.60000000e+02   1.58054230e-03]
+ [  3.70000000e+02   2.47045141e-03]
+ [  3.80000000e+02   1.95466005e-03]
+ [  3.90000000e+02   1.63034687e-03]
+ [  4.00000000e+02   1.50665920e-03]
+ [  4.10000000e+02   1.08108553e-03]
+ [  4.20000000e+02   1.19128800e-03]
+ [  4.30000000e+02   1.38448516e-03]
+ [  4.40000000e+02   1.05307845e-03]
+ [  4.50000000e+02   1.05050509e-03]
+ [  4.60000000e+02   1.53654767e-03]
+ [  4.70000000e+02   1.59023178e-03]
+ [  4.80000000e+02   1.96693325e-03]
+ [  4.90000000e+02   1.26423652e-03]
+ [  5.00000000e+02   1.09738379e-03]
+ [  5.10000000e+02   1.24295522e-03]
+ [  5.20000000e+02   1.38760242e-03]
+ [  5.30000000e+02   1.15816167e-03]
+ [  5.40000000e+02   1.12949731e-03]
+ [  5.50000000e+02   8.40070541e-04]
+ [  5.60000000e+02   1.23773236e-03]
+ [  5.70000000e+02   1.33238570e-03]
+ [  5.80000000e+02   9.42691287e-04]
+ [  5.90000000e+02   9.50353278e-04]
+ [  6.00000000e+02   1.05704169e-03]
+ [  6.10000000e+02   1.55080925e-03]
+ [  6.20000000e+02   1.68209488e-03]
+ [  6.30000000e+02   9.48672008e-04]
+ [  6.40000000e+02   1.65397371e-03]
+ [  6.50000000e+02   1.46342244e-03]
+ [  6.60000000e+02   1.08585181e-03]
+ [  6.70000000e+02   9.40324040e-04]
+ [  6.80000000e+02   9.29499744e-04]
+ [  6.90000000e+02   7.03773927e-04]
+ [  7.00000000e+02   1.24141551e-03]
+ [  7.10000000e+02   1.02793204e-03]
+ [  7.20000000e+02   1.82087615e-03]
+ [  7.30000000e+02   1.16088649e-03]
+ [  7.40000000e+02   1.07180816e-03]
+ [  7.50000000e+02   9.24449123e-04]
+ [  7.60000000e+02   9.49640176e-04]
+ [  7.70000000e+02   1.04694511e-03]
+ [  7.80000000e+02   8.09595338e-04]
+ [  7.90000000e+02   1.14679988e-03]
+ [  8.00000000e+02   8.92893295e-04]
+ [  8.10000000e+02   8.30984442e-04]
+ [  8.20000000e+02   8.64787085e-04]
+ [  8.30000000e+02   9.83023667e-04]
+ [  8.40000000e+02   8.92442593e-04]
+ [  8.50000000e+02   1.04978634e-03]
+ [  8.60000000e+02   8.84101784e-04]
+ [  8.70000000e+02   1.33903953e-03]
+ [  8.80000000e+02   9.89491469e-04]
+ [  8.90000000e+02   9.22970241e-04]
+ [  9.00000000e+02   1.30868342e-03]
+ [  9.10000000e+02   8.38359352e-04]
+ [  9.20000000e+02   7.91967090e-04]
+ [  9.30000000e+02   1.53447513e-03]
+ [  9.40000000e+02   7.60031922e-04]
+ [  9.50000000e+02   1.49538333e-03]
+ [  9.60000000e+02   7.79114314e-04]
+ [  9.70000000e+02   6.95165247e-04]
+ [  9.80000000e+02   6.81479520e-04]
+ [  9.90000000e+02   7.19470147e-04]
+ [  1.00000000e+03   7.36025395e-04]]
+initial: [  0.00000000e+00   1.25333234e-01   2.48689887e-01   3.68124553e-01
+   4.81753674e-01   5.87785252e-01   6.84547106e-01   7.70513243e-01
+   8.44327926e-01   9.04827052e-01   9.51056516e-01   9.82287251e-01
+   9.98026728e-01   9.98026728e-01   9.82287251e-01   9.51056516e-01
+   9.04827052e-01   8.44327926e-01   7.70513243e-01   6.84547106e-01
+   5.87785252e-01   4.81753674e-01   3.68124553e-01   2.48689887e-01
+   1.25333234e-01  -3.21624530e-16  -1.25333234e-01  -2.48689887e-01
+  -3.68124553e-01  -4.81753674e-01  -5.87785252e-01  -6.84547106e-01
+  -7.70513243e-01  -8.44327926e-01  -9.04827052e-01  -9.51056516e-01
+  -9.82287251e-01  -9.98026728e-01  -9.98026728e-01  -9.82287251e-01
+  -9.51056516e-01  -9.04827052e-01  -8.44327926e-01  -7.70513243e-01
+  -6.84547106e-01  -5.87785252e-01  -4.81753674e-01  -3.68124553e-01
+  -2.48689887e-01  -1.25333234e-01]
+prediction#1, output: 0.012773
+prediction#2, output: 0.131040
+prediction#3, output: 0.238371
+prediction#4, output: 0.336347
+prediction#5, output: 0.428518
+prediction#6, output: 0.520227
+prediction#7, output: 0.617414
+prediction#8, output: 0.723377
+prediction#9, output: 0.832143
+prediction#10, output: 0.925053
+prediction#11, output: 0.984046
+prediction#12, output: 1.007379
+prediction#13, output: 1.004531
+prediction#14, output: 0.985098
+prediction#15, output: 0.955085
+prediction#16, output: 0.917505
+prediction#17, output: 0.873552
+prediction#18, output: 0.823364
+prediction#19, output: 0.766409
+prediction#20, output: 0.701671
+prediction#21, output: 0.627745
+prediction#22, output: 0.542916
+prediction#23, output: 0.445334
+prediction#24, output: 0.333377
+prediction#25, output: 0.206340
+prediction#26, output: 0.065507
+prediction#27, output: -0.084709
+prediction#28, output: -0.236479
+prediction#29, output: -0.380214
+prediction#30, output: -0.507871
+prediction#31, output: -0.615565
+prediction#32, output: -0.703554
+prediction#33, output: -0.774374
+prediction#34, output: -0.831004
+prediction#35, output: -0.875879
+prediction#36, output: -0.910551
+prediction#37, output: -0.935673
+prediction#38, output: -0.951097
+prediction#39, output: -0.956048
+prediction#40, output: -0.949341
+prediction#41, output: -0.929645
+prediction#42, output: -0.895742
+prediction#43, output: -0.846718
+prediction#44, output: -0.782088
+prediction#45, output: -0.701867
+prediction#46, output: -0.606697
+prediction#47, output: -0.498059
+prediction#48, output: -0.378539
+prediction#49, output: -0.251984
+prediction#50, output: -0.123258
+prediction#51, output: 0.002570
+prediction#52, output: 0.121453
+prediction#53, output: 0.231492
+prediction#54, output: 0.333484
+prediction#55, output: 0.430793
+prediction#56, output: 0.528634
+prediction#57, output: 0.632278
+prediction#58, output: 0.742590
+prediction#59, output: 0.849224
+prediction#60, output: 0.932062
+prediction#61, output: 0.978308
+prediction#62, output: 0.991468
+prediction#63, output: 0.981828
+prediction#64, output: 0.957759
+prediction#65, output: 0.924071
+prediction#66, output: 0.883015
+prediction#67, output: 0.835319
+prediction#68, output: 0.780801
+prediction#69, output: 0.718673
+prediction#70, output: 0.647691
+prediction#71, output: 0.566251
+prediction#72, output: 0.472545
+prediction#73, output: 0.364851
+prediction#74, output: 0.242137
+prediction#75, output: 0.105026
+prediction#76, output: -0.043023
+prediction#77, output: -0.195075
+prediction#78, output: -0.341766
+prediction#79, output: -0.474306
+prediction#80, output: -0.587550
+prediction#81, output: -0.680741
+prediction#82, output: -0.755977
+prediction#83, output: -0.816235
+prediction#84, output: -0.864145
+prediction#85, output: -0.901510
+prediction#86, output: -0.929221
+prediction#87, output: -0.947339
+prediction#88, output: -0.955244
+prediction#89, output: -0.951843
+prediction#90, output: -0.935823
+prediction#91, output: -0.905916
+prediction#92, output: -0.861115
+prediction#93, output: -0.800808
+prediction#94, output: -0.724866
+prediction#95, output: -0.633741
+prediction#96, output: -0.528655
+prediction#97, output: -0.411862
+prediction#98, output: -0.286859
+prediction#99, output: -0.158280
+prediction#100, output: -0.031236
+outputs: [ 0.0127728   0.1310403   0.23837069  0.33634672  0.42851773  0.52022696
+  0.61741412  0.72337723  0.83214319  0.92505288  0.98404634  1.00737941
+  1.00453079  0.98509812  0.95508492  0.91750491  0.87355244  0.82336402
+  0.7664088   0.70167136  0.62774467  0.5429157   0.44533435  0.33337703
+  0.20633975  0.06550732 -0.08470863 -0.23647925 -0.38021424 -0.50787091
+ -0.61556482 -0.70355403 -0.77437353 -0.83100379 -0.87587857 -0.91055095
+ -0.93567252 -0.95109713 -0.95604801 -0.9493407  -0.92964518 -0.89574182
+ -0.84671843 -0.78208768 -0.70186687 -0.6066975  -0.49805892 -0.37853873
+ -0.25198358 -0.12325796  0.00256959  0.12145317  0.23149195  0.33348361
+  0.43079326  0.52863443  0.63227844  0.74259043  0.84922445  0.93206203
+  0.97830808  0.99146831  0.98182786  0.95775878  0.92407131  0.88301539
+  0.83531916  0.78080106  0.71867323  0.64769053  0.5662514   0.47254452
+  0.36485115  0.24213722  0.10502604 -0.04302344 -0.19507505 -0.34176564
+ -0.4743064  -0.58755028 -0.68074125 -0.75597692 -0.81623483 -0.86414504
+ -0.90150976 -0.92922103 -0.9473393  -0.95524442 -0.95184314 -0.9358232
+ -0.90591633 -0.86111474 -0.80080783 -0.72486591 -0.63374114 -0.52865475
+ -0.41186175 -0.28685945 -0.15828006 -0.03123623]
+
+real	2m10.783s
+user	1m19.273s
+sys	1m28.589s
